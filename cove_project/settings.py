@@ -37,17 +37,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
+    'cove',
+    'cove.input',
+    'cove_bods',
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+
+
+MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    'django.middleware.security.SecurityMiddleware',
+    'dealer.contrib.django.Middleware',
+    'cove.middleware.CoveConfigCurrentApp',
+)
+
+
 
 ROOT_URLCONF = 'cove_project.urls'
 
@@ -118,3 +130,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+COVE_CONFIG = {
+    'app_name': 'cove_bods',
+    'app_base_template': 'cove_bods/base.html',
+    'app_verbose_name': 'Open Contracting Data Review Tool',
+    'app_strapline': 'Review your OCDS data.',
+    'root_list_path': 'releases',
+    'root_id': 'ocid',
+    'convert_titles': False,
+    'input_methods': ['upload', 'url', 'text'],
+    'support_email': 'data@open-contracting.org'
+}
+
