@@ -1,0 +1,8 @@
+Django
+# Libs we want installed first so that later we regard them as installed
+-e git+https://github.com/open-contracting/lib-cove-ocds.git@v0.2.1#egg=libcoveocds
+# Libs we need
+-e git+https://github.com/OpenDataServices/flatten-tool.git@v0.5.0#egg=flattentool
+-e git+https://github.com/OpenDataServices/lib-cove.git@master#egg=libcove
+-e git+https://github.com/OpenDataServices/cove.git@9d2145debe25bb55e67887de2ae7e22e4cf5467d#egg=cove
+-e git+https://github.com/odscjames/openownership-lib-cove-bods-alpha.git@master#egg=libcovebods
