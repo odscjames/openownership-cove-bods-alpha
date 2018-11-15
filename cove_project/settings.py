@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from cove import settings
+
+PIWIK = settings.PIWIK
+GOOGLE_ANALYTICS_ID = settings.GOOGLE_ANALYTICS_ID
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -63,21 +67,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'cove_project.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
+TEMPLATES = settings.TEMPLATES
 
 WSGI_APPLICATION = 'cove_project.wsgi.application'
 
