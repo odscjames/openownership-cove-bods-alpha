@@ -54,7 +54,6 @@ INSTALLED_APPS = [
 ]
 
 
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -68,7 +67,6 @@ MIDDLEWARE_CLASSES = (
     'dealer.contrib.django.Middleware',
     'cove.middleware.CoveConfigCurrentApp',
 )
-
 
 
 ROOT_URLCONF = 'cove_project.urls'
@@ -126,7 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
-
 STATIC_URL = settings.STATIC_URL
 STATIC_ROOT = settings.STATIC_ROOT
 
@@ -141,4 +138,3 @@ COVE_CONFIG = {
     'input_methods': ['upload', 'url', 'text'],
     'support_email': 'data@open-contracting.org'
 }
-

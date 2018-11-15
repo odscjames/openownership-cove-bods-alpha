@@ -8,4 +8,4 @@ install:
 
 script:
   - "DJANGO_SETTINGS_MODULE=cove_project.settings python -m pytest cove_bods/tests.py"
-
+  - "flake8 cove_project/ cove_bods/"
