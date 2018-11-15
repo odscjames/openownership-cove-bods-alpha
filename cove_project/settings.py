@@ -13,11 +13,17 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from cove import settings
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 PIWIK = settings.PIWIK
 GOOGLE_ANALYTICS_ID = settings.GOOGLE_ANALYTICS_ID
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# We can't take MEDIA_ROOT and MEDIA_URL from cove settings,
+# ... otherwise the files appear under the BASE_DIR that is the Cove library install.
+# That could get messy. We want them to appear in our directory.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -119,8 +125,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
 
+
+STATIC_URL = settings.STATIC_URL
+STATIC_ROOT = settings.STATIC_ROOT
 
 COVE_CONFIG = {
     'app_name': 'cove_bods',

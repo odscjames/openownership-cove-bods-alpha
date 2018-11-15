@@ -2,3 +2,4 @@
 /.ve
 *.pyc
 __pycache__
+/media
