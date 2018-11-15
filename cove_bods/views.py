@@ -79,12 +79,6 @@ def explore_bods(request, pk):
         with open(context['converted_path'], encoding='utf-8') as fp:
             json_data = json.load(fp, parse_float=Decimal)
 
-
-
-
-
-
-
     context = common_checks_bods(context, upload_dir, json_data, schema_bods)
 
     template = 'cove_bods/explore.html'
