@@ -3,9 +3,9 @@ Django==1.11.16
 -e git+https://github.com/open-contracting/lib-cove-ocds.git@f705ae7ec729eb094b8c06a0dc9ec8dfae438554#egg=libcoveocds
 # Libs we need
 -e git+https://github.com/OpenDataServices/flatten-tool.git@4c13ef0b32a59e810919a3de09bc8f64ce8f9392#egg=flattentool
--e git+https://github.com/OpenDataServices/lib-cove.git@af8caaf0643fee72c697a41592865183ad55c4b5#egg=libcove
+-e git+https://github.com/OpenDataServices/lib-cove.git@b4859f68fb703291eff24c2fd77c7e3b6e01f117#egg=libcove
 -e git+https://github.com/OpenDataServices/cove.git@9d2145debe25bb55e67887de2ae7e22e4cf5467d#egg=cove
--e git+https://github.com/odscjames/openownership-lib-cove-bods-alpha.git@24b258d2773e12f990bd8d2b88e68b1183d1f96d#egg=libcovebods
+-e git+https://github.com/odscjames/openownership-lib-cove-bods-alpha.git@d8d8735259ca79bcf7ed0b0a1d9d1f3cc3815b7c#egg=libcovebods
 ## The following requirements were added by pip freeze:
 bleach==3.0.2
 cached-property==1.5.1

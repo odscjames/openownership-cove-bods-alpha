@@ -12,7 +12,8 @@ from libcovebods.schema import SchemaBODS
 from libcovebods.config import LibCoveBODSConfig
 from libcove.lib.exceptions import CoveInputDataError
 from cove.views import explore_data_context
-
+from libcove.lib.converters import convert_spreadsheet
+from cove_project import settings
 
 logger = logging.getLogger(__name__)
 
@@ -34,8 +35,13 @@ def explore_bods(request, pk):
         return error
 
     lib_cove_bods_config = LibCoveBODSConfig()
+    lib_cove_bods_config.config['root_list_path'] = settings.COVE_CONFIG['root_list_path']
+    lib_cove_bods_config.config['root_id'] = settings.COVE_CONFIG['root_id']
+    lib_cove_bods_config.config['id_name'] = settings.COVE_CONFIG['id_name']
+    lib_cove_bods_config.config['root_is_list'] = settings.COVE_CONFIG['root_is_list']
 
     upload_dir = db_data.upload_dir()
+    upload_url = db_data.upload_url()
     file_name = db_data.original_file.file.name
     file_type = context['file_type']
 
@@ -63,15 +69,21 @@ def explore_bods(request, pk):
                     'msg': _('BODS JSON should have an list as the top level, the JSON you supplied does not.'),
                 })
 
-            schema_bods = SchemaBODS(lib_cove_bods_config=lib_cove_bods_config)
+        schema_bods = SchemaBODS(lib_cove_bods_config=lib_cove_bods_config)
 
     else:
-        raise CoveInputDataError(context={
-            'sub_title': _("Sorry, we can't process that data"),
-            'link': 'index',
-            'link_text': _('Try Again'),
-            'msg': _('We only do JSON so far'),
-        })
+
+        schema_bods = SchemaBODS(lib_cove_bods_config=lib_cove_bods_config)
+        context.update(convert_spreadsheet(upload_dir, upload_url, file_name, file_type, lib_cove_bods_config,
+                                           schema_url=schema_bods.release_pkg_schema_url))
+        with open(context['converted_path'], encoding='utf-8') as fp:
+            json_data = json.load(fp, parse_float=Decimal)
+
+
+
+
+
+
 
     context = common_checks_bods(context, upload_dir, json_data, schema_bods)
 

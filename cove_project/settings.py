@@ -132,8 +132,10 @@ COVE_CONFIG = {
     'app_base_template': 'cove_bods/base.html',
     'app_verbose_name': 'Open Contracting Data Review Tool',
     'app_strapline': 'Review your OCDS data.',
-    'root_list_path': 'releases',
-    'root_id': 'ocid',
+    'root_list_path': 'there-is-no-root-list-path',
+    'root_id': 'statementID',
+    'id_name': 'statementID',
+    'root_is_list': True,
     'convert_titles': False,
     'input_methods': ['upload', 'url', 'text'],
     'support_email': 'data@open-contracting.org'
