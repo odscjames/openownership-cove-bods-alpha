@@ -1,0 +1,42 @@
+{% extends 'explore.html' %}
+{% load i18n %}
+{% load cove_tags %}
+{% block header_button %}
+  <a href="{% url 'index' %}" class="btn btn-large btn-success">{% trans 'Load New File' %}</a>
+{% endblock %}
+
+{% block explore_content %}
+    <div class="row">
+
+    {% block key_facts %}
+    {% endblock %}
+
+    {% if validation_errors %}
+      {% for error_json, values in validation_errors %}
+        {% with error=error_json|json_decode %}
+          {% cove_modal_errors className="validation-errors-"|concat:forloop.counter modalTitle=error.message errorList=values file_type=file_type full_table=True %}
+        {% endwith %}
+      {% endfor %}
+
+
+      <a name="validation-errors" class="anchor"></a>
+      <div class="panel panel-danger">
+        <div id="validation-panel" class="panel-heading pointer" role="region" aria-expanded="true" aria-controls="validationTable" data-toggle="collapse" data-target="#validationTable">
+          <h4 class="panel-title">
+            <span class="glyphicon glyphicon-collapse-up"></span>{% trans 'Validation Errors' %}
+          </h4>
+        </div>
+        <div id="validationTable" class="collapse in">
+          {% include "validation_table.html" %}
+        </div>
+      </div>
+    {% endif %}
+
+    </div>
+{% endblock explore_content %}
+
+
+{% block bottomcontent1 %}
+{% endblock %}
+{% block bottomcontent2 %}
+{% endblock %}
