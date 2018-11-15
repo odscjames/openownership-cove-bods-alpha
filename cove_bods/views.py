@@ -84,7 +84,7 @@ def explore_bods(request, pk):
             'msg': _('We only do JSON so far'),
         })
 
-    context = common_checks_bods(context)
+    context = common_checks_bods(context, upload_dir, json_data, schema_bods)
 
     template = 'cove_bods/explore.html'
 
