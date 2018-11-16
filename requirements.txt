@@ -1,42 +1,39 @@
+# Lock this version of dealer because later versions have a problem - middleware is of wrong style to use with MIDDLEWARE_CLASSES
+dealer==2.0.5
 Django==1.11.16
-# Libs we want installed first so that later we regard them as installed
--e git+https://github.com/open-contracting/lib-cove-ocds.git@f705ae7ec729eb094b8c06a0dc9ec8dfae438554#egg=libcoveocds
-# Libs we need
 -e git+https://github.com/OpenDataServices/flatten-tool.git@4c13ef0b32a59e810919a3de09bc8f64ce8f9392#egg=flattentool
 -e git+https://github.com/OpenDataServices/lib-cove.git@b4859f68fb703291eff24c2fd77c7e3b6e01f117#egg=libcove
--e git+https://github.com/OpenDataServices/cove.git@9d2145debe25bb55e67887de2ae7e22e4cf5467d#egg=cove
 -e git+https://github.com/odscjames/openownership-lib-cove-bods-alpha.git@d8d8735259ca79bcf7ed0b0a1d9d1f3cc3815b7c#egg=libcovebods
+-e git+https://github.com/odscjames/lib-cove-web-alpha.git@6f16860327094d515a07f455351ac670889c7622#egg=libcoveweb
 ## The following requirements were added by pip freeze:
 bleach==3.0.2
 cached-property==1.5.1
-certifi==2018.1.18
+certifi==2018.10.15
 chardet==3.0.4
 commonmark==0.8.1
-dealer==2.0.5
-django-bootstrap3==9.1.0
-django-debug-toolbar==1.9.1
-django-environ==0.4.4
+django-bootstrap3==11.0.0
+django-debug-toolbar==1.10.1
+django-environ==0.4.5
 et-xmlfile==1.0.1
-future==0.16.0
-html5lib==1.0.1
-idna==2.6
-jdcal==1.3
+future==0.17.1
+idna==2.7
+jdcal==1.4
 json-merge-patch==0.2
 jsonref==0.2
 jsonschema==2.6.0
 LEPL==5.1.3
 lxml==4.2.5
 openpyxl==2.5.10
-python-dateutil==2.7.3
+python-dateutil==2.7.5
 pytz==2018.7
-raven==6.6.0
+raven==6.9.0
 requests==2.20.1
-rfc3987==1.3.7
+rfc3987==1.3.8
 rfc6266==0.0.4
 schema==0.6.8
 six==1.11.0
 sqlparse==0.2.4
 strict-rfc3339==0.7
-urllib3==1.22
+urllib3==1.24.1
 webencodings==0.5.1
 xmltodict==0.11.0
