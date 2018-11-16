@@ -12,7 +12,7 @@ from libcovebods.schema import SchemaBODS
 from libcovebods.config import LibCoveBODSConfig
 from libcove.lib.exceptions import CoveInputDataError
 from cove.views import explore_data_context
-from libcove.lib.converters import convert_spreadsheet
+from libcove.lib.converters import convert_spreadsheet, convert_json
 from cove_project import settings
 
 logger = logging.getLogger(__name__)
@@ -70,6 +70,10 @@ def explore_bods(request, pk):
                 })
 
         schema_bods = SchemaBODS(lib_cove_bods_config=lib_cove_bods_config)
+
+        context.update(convert_json(upload_dir, upload_url, file_name, lib_cove_bods_config,
+                                    schema_url=schema_bods.release_pkg_schema_url, replace=True,
+                                    request=request, flatten=True))
 
     else:
 

@@ -2,7 +2,7 @@
 dealer==2.0.5
 Django==1.11.16
 -e git+https://github.com/OpenDataServices/flatten-tool.git@4c13ef0b32a59e810919a3de09bc8f64ce8f9392#egg=flattentool
--e git+https://github.com/OpenDataServices/lib-cove.git@b4859f68fb703291eff24c2fd77c7e3b6e01f117#egg=libcove
+-e git+https://github.com/OpenDataServices/lib-cove.git@12223e5a135dc7392e1ae90e506fe3133b3604b3#egg=libcove
 -e git+https://github.com/odscjames/openownership-lib-cove-bods-alpha.git@d8d8735259ca79bcf7ed0b0a1d9d1f3cc3815b7c#egg=libcovebods
 -e git+https://github.com/odscjames/lib-cove-web-alpha.git@6f16860327094d515a07f455351ac670889c7622#egg=libcoveweb
 ## The following requirements were added by pip freeze:
