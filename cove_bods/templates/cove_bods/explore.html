@@ -112,6 +112,38 @@
         {% endif %}
 
     </div>
+
+
+
+    <div class="row">
+
+        {% if additional_fields_count %}
+
+              <a name="additional-fields" class="anchor"></a>
+              <div class="panel panel-danger">
+                <div id="validation-panel" class="panel-heading pointer" role="region" aria-expanded="true" aria-controls="validationTable" data-toggle="collapse" data-target="#additionalFieldsTable">
+                  <h4 class="panel-title">
+                    <span class="glyphicon glyphicon-collapse-up"></span>{% trans 'Additional Fields' %}
+                  </h4>
+                </div>
+                <div id="additionalFieldsTable" class="collapse in">
+                  {% include "additional_fields_table.html" %}
+                </div>
+              </div>
+        {% else %}
+             <div class="panel panel-success">
+                <div id="validation-panel" class="panel-heading pointer" role="region" aria-expanded="true" aria-controls="validationTable" data-toggle="collapse" data-target="#additionalFieldsTable">
+                  <h4 class="panel-title">
+                    <span class="glyphicon glyphicon-collapse-up"></span>{% trans 'Additional Fields' %}
+                  </h4>
+                </div>
+                <div id="additionalFieldsTable" class="collapse in">
+                    <p>{% trans 'There were no additional fields!' %}</p>
+                </div>
+              </div>
+        {% endif %}
+
+    </div>
 {% endblock explore_content %}
 
 

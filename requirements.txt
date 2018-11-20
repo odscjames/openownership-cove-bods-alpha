@@ -2,8 +2,8 @@
 dealer==2.0.5
 Django==1.11.16
 -e git+https://github.com/OpenDataServices/flatten-tool.git@4c13ef0b32a59e810919a3de09bc8f64ce8f9392#egg=flattentool
--e git+https://github.com/OpenDataServices/lib-cove.git@12223e5a135dc7392e1ae90e506fe3133b3604b3#egg=libcove
--e git+https://github.com/odscjames/openownership-lib-cove-bods-alpha.git@d8d8735259ca79bcf7ed0b0a1d9d1f3cc3815b7c#egg=libcovebods
+-e git+https://github.com/OpenDataServices/lib-cove.git@7c8d2ff0bbb8d9c0f2a124eacfa2058b0eee3a9a#egg=libcove
+-e git+https://github.com/odscjames/openownership-lib-cove-bods-alpha.git@3df00e6a23c378da2f0abdd004c1d682209729c9#egg=libcovebods
 -e git+https://github.com/odscjames/lib-cove-web-alpha.git@74d4d46e1b618432826685483bc370ca2044fc83#egg=libcoveweb
 ## The following requirements were added by pip freeze:
 bleach==3.0.2
