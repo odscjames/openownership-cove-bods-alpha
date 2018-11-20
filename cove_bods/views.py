@@ -85,6 +85,10 @@ def explore_bods(request, pk):
 
     context = common_checks_bods(context, upload_dir, json_data, schema_bods)
 
+    if not db_data.rendered:
+        db_data.rendered = True
+    db_data.save()
+
     template = 'cove_bods/explore.html'
 
     return render(request, template, context)
